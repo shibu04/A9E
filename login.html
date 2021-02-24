@@ -1,0 +1,202 @@
+<html>
+<head><title>
+    Login
+</title>
+<style>
+   @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+   @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: #d1f3a4;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 350px;
+  /* max-height: 1000vmax; */
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+}
+
+.wrapper h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"], .wrapper .input_field input[type="password"]{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.wrapper .btn input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 40%;
+  background: #6dfe0c;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+.eye{
+    position: relative;
+    right: -275px;
+    top: -27px;
+  }  
+  #hide1{
+    display: none;
+  }
+  .eye1{
+    position: relative;
+    right: -275px;
+    top: -27px;
+  }  
+  #hide3{
+    display: none;
+  }
+  .btn1{
+       position: relative;
+        left: 0px;
+    top: 10px; 
+    
+}
+.btn2{
+       position: relative;
+      left: 0px;
+    top: 20px;    
+}
+
+</style>
+<script>
+   function validate(){
+  
+  var email = document.getElementById("email").value;
+  var pw = document.getElementById("pswd").value;  
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(email.indexOf("@") == -1 || email.length < 7){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }  
+  if(pw.length < 8) {  
+     text= "Password length must be atleast 8 characters";  
+     error_message.innerHTML = text;
+     return false;  
+ }}
+</script>
+
+
+</head>    
+
+<body>
+
+    <div class="wrapper">
+        <h2>َLOGIN</h2>
+        <div id="error_message">
+           
+        </div>
+        <form action="home.html" id="myform" onsubmit = "return validate();">
+          
+          <div class="input_field">
+              <input type="text" placeholder="Email*" id="email">
+          </div>
+          
+        <div class="input_field">
+            <input type="password" placeholder="Password*" id="pswd">
+            <span class="eye" onclick="myfunction()">
+              <i id="hide1" class="fa fa-eye"></i>
+            <i id="hide2" class="fa fa-eye-slash"></i>
+          </span>
+        </div>
+          <div class="btn">
+              <input type="submit">
+          </div>
+          <div class="btn1">
+              <!-- <input type="submit" value="Register" onclick="form.action='registration3.HTML';"/> -->
+            <!--     -->
+            <a href="registration.html" >Register</a>
+          </div>
+          <div class="btn2">
+            <!-- <input type="submit" value="Register" onclick="form.action='registration3.HTML';"/> -->
+          <!--     -->
+          <a href="forgot.html" >Forgot Password?</a>
+        </div>
+        </form>
+      </div>
+      <script>
+        function myfunction(){
+          var x=document.getElementById("pswd");
+          var y=document.getElementById("hide1");
+          var z=document.getElementById("hide2");
+      
+          if (x.type==='password'){
+            x.type="text";
+            y.style.display="block";
+            z.style.display="none";
+          }
+          else{
+            x.type="password";
+            y.style.display="none";
+            z.style.display="block";
+          }
+        }
+
+        function myfunction1(){
+          var x=document.getElementById("rpswd");
+          var y=document.getElementById("hide3");
+          var z=document.getElementById("hide4");
+      
+          if (x.type==='password'){
+            x.type="text";
+            y.style.display="block";
+            z.style.display="none";
+          }
+          else{
+            x.type="password";
+            y.style.display="none";
+            z.style.display="block";
+          }
+        }
+      </script>
+</body>
+</html>

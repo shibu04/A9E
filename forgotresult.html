@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Forgot result page</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+            body
+             {
+             font-family: 'Roboto', sans-serif;
+             background-color: rgb(171, 209, 133);
+             }
+  
+        </style>
+        <script>
+                                /*let str = "tonkjhuhuhuy@gmail.com"
+                                str = str.split('');
+                                let finalArr=[];
+                                let len = str.indexOf('@');
+                                str.forEach((item,pos)=>{
+                                (pos>=1 && pos<=len-2) ? finalArr.push('*') : finalArr.push(str[pos]);
+                                })
+                                console.log(finalArr.join(''))*/
+            window.addEventListener('load',()=>{
+
+                const params=(new URL(document.location)).searchParams;
+                const email= params.get('email');
+                document.getElementById('result-email').innerHTML=email;
+
+               
+            })
+        </script>
+    </head>
+    <body>
+        <h1>SUCCESS</h1><br>
+        <h3>Successfully mail has been sent to <u><span id="result-email"/></u></h3>
+    </body>
+</html>
